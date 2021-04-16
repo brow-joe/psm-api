@@ -1,0 +1,16 @@
+# br.com.jonathan/psm/api v0.0.0-00010101000000-000000000000 => ./src/api
+## explicit
+br.com.jonathan/psm/api
+# br.com.jonathan/psm/api/domain v0.0.0-00010101000000-000000000000 => ./src/api/domain
+## explicit
+br.com.jonathan/psm/api/domain
+# br.com.jonathan/psm/api/userinterfaces v0.0.0-00010101000000-000000000000 => ./src/api/userinterfaces
+## explicit
+br.com.jonathan/psm/api/userinterfaces
+# github.com/gorilla/mux v1.8.0
+## explicit
+github.com/gorilla/mux
+# br.com.jonathan/psm/api => ./src/api
+# br.com.jonathan/psm/api/domain => ./src/api/domain
+# br.com.jonathan/psm/api/usecases => ./src/api/usecases
+# br.com.jonathan/psm/api/userinterfaces => ./src/api/userinterfaces
