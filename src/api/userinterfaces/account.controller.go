@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"github.com/gorilla/mux"
 	"br.com.jonathan/psm/api/domain"
-	"br.com.jonathan/psm/api/usecase"
+	"br.com.jonathan/psm/api/usecases"
 )
 
 func PostAccountHandler(w http.ResponseWriter, r *http.Request){
@@ -17,10 +17,9 @@ func PostAccountHandler(w http.ResponseWriter, r *http.Request){
 		case account == domain.Account{}:
 			w.WriteHeader(http.StatusBadRequest)
 		default:
+			var response = usecase.CreateAccount(account)
 			w.WriteHeader(http.StatusCreated)
-			json.NewEncoder(w).Encode(
-				usecase.CreateAccount(account)
-			)
+			json.NewEncoder(w).Encode(response)
 	}
 }
 
@@ -32,9 +31,8 @@ func GetAccountHandler(w http.ResponseWriter, r *http.Request){
 		case id < 1:
 			w.WriteHeader(http.StatusNotFound)
 		default:
+			var response = usecase.RetrieveAccount(id)
 			w.WriteHeader(http.StatusOK)
-			json.NewEncoder(w).Encode(
-				usecase.RetrieveAccount(id)
-			)
+			json.NewEncoder(w).Encode(response)
 	}
 }

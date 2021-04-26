@@ -1,1 +1,1 @@
-module br.com.jonathan/psm/api/usecases
+module br.com.jonathan/psm/api/domain

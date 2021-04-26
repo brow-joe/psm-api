@@ -1,10 +1,10 @@
 package controller
 
 import (
-	"time"
     "net/http"
 	"encoding/json"
 	"br.com.jonathan/psm/api/domain"
+	"br.com.jonathan/psm/api/usecases"
 )
 
 func PostTransactionHandler(w http.ResponseWriter, r *http.Request){
@@ -15,9 +15,9 @@ func PostTransactionHandler(w http.ResponseWriter, r *http.Request){
 		case transaction == domain.Transaction{}:
 			w.WriteHeader(http.StatusBadRequest)
 		default:
-			transaction.ID = 1
-			transaction.Date = time.Now().Format(time.RFC3339)
+			var account = usecase.RetrieveAccount(transaction.AccountId)
+			var response = usecase.CreateTransaction(w, account, transaction)
 			w.WriteHeader(http.StatusCreated)
-			json.NewEncoder(w).Encode(transaction)
+			json.NewEncoder(w).Encode(response)
 	}
 }

@@ -13,6 +13,7 @@ replace br.com.jonathan/psm/api/userinterfaces => ./src/api/userinterfaces
 require (
 	br.com.jonathan/psm/api v0.0.0-00010101000000-000000000000
 	br.com.jonathan/psm/api/domain v0.0.0-00010101000000-000000000000 // indirect
+	br.com.jonathan/psm/api/usecases v0.0.0-00010101000000-000000000000 // indirect
 	br.com.jonathan/psm/api/userinterfaces v0.0.0-00010101000000-000000000000 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
 )
